@@ -7,7 +7,7 @@ const connection = require('../lib/setup-mongoose');
 const db = require('./db');
 const app = require('../lib/app');
 
-describe.only('budget', () => {
+describe('budget', () => {
 
     const request = chai.request(app);
 
@@ -15,7 +15,7 @@ describe.only('budget', () => {
 
     let budget = { name: 'doughnuts', amount: 30 };
 
-    it('POST a budget', () => {
+    it('/POST a budget', () => {
         return request
             .post('/api/budget')
             .send(budget)
@@ -27,5 +27,13 @@ describe.only('budget', () => {
                 budget = body;
             });
     });
-    
+    it('/Delete image', () => {
+        const url = `/api/images/${budget._id}`;
+        return request.delete(url)
+            .then(() => request.get(url))
+            .then(
+                () => { throw new Error('unexpected success response');},
+                res => assert.equal(res.status, 404)
+            );
+    });
 });
