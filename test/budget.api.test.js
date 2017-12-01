@@ -27,8 +27,8 @@ describe('budget', () => {
                 budget = body;
             });
     });
-    it('/Delete image', () => {
-        const url = `/api/images/${budget._id}`;
+    it('/Delete budget', () => {
+        const url = `/api/budget/${budget._id}`;
         return request.delete(url)
             .then(() => request.get(url))
             .then(

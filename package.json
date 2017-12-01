@@ -6,7 +6,7 @@
   "scripts": {
     "start": "nodemon server.js",
     "lint": "eslint .",
-    "//pretest": "npm run lint",
+    "pretest": "npm run lint",
     "test": "MONGODB_URI=mongodb://localhost/budget-tracker-test mocha",
     "test:debug": "MONGODB_URI=mongodb://localhost/budget-tracker-test mocha --debug-brk",
     "test:watch": "MONGODB_URI=mongodb://localhost/budget-tracker-test nodemon --exec mocha"
