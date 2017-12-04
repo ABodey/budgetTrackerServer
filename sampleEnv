@@ -1,0 +1,2 @@
+PORT=(the port you want it to run on if not 3001)
+MONGODB_URI=(your mongodb database connection string)
