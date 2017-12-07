@@ -7,28 +7,28 @@ const connection = require('../lib/setup-mongoose');
 const db = require('./db');
 const app = require('../lib/app');
 
-describe('budget', () => {
+describe('expense', () => {
 
     const request = chai.request(app);
 
     before(db.drop(connection));
 
-    let budget = { name: 'doughnuts', amount: 30 };
+    let expense = { name: 'doughnuts', amount: 30 };
 
-    it('/POST a budget', () => {
+    it('/POST a expense', () => {
         return request
-            .post('/api/budget')
-            .send(budget)
+            .post('/api/expense')
+            .send(expense)
             .then(({ body }) => {
                 assert.isOk(body._id);
                 for(const key of ['name', 'url']) {
-                    assert.equal(body[key], budget[key]);
+                    assert.equal(body[key], expense[key]);
                 }
-                budget = body;
+                expense = body;
             });
     });
-    it('/Delete budget', () => {
-        const url = `/api/budget/${budget._id}`;
+    it('/Delete expense', () => {
+        const url = `/api/expense/${expense._id}`;
         return request.delete(url)
             .then(() => request.get(url))
             .then(
