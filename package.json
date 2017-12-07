@@ -1,7 +1,7 @@
 {
-  "name": "expense-tracker-server",
+  "name": "budget-tracker-server",
   "version": "1.0.0",
-  "description": "server for the expense tracker app",
+  "description": "server for the budget tracker app",
   "main": "index.js",
   "scripts": {
     "start": "nodemon server.js",
@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ABodey/expenseTrackerServer.git"
+    "url": "git+https://github.com/ABodey/budgetTrackerServer.git"
   },
   "author": "Andrew <A.s.bodey@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ABodey/expenseTrackerServer/issues"
+    "url": "https://github.com/ABodey/budgetTrackerServer/issues"
   },
-  "homepage": "https://github.com/ABodey/expenseTrackerServer#readme",
+  "homepage": "https://github.com/ABodey/budgetTrackerServer#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
